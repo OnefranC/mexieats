@@ -243,7 +243,40 @@ const MexiEats = {
       <div class="menu-card" data-id="${item.id}">
         <div class="menu-card-image">
           ${item.badge ? `<span class="menu-card-badge ${item.badge}">${item.badge === 'popular' ? '★ Popular' : 'New'}</span>` : ''}
-          ${item.emoji}
+          ${item.img ? `<img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="menu-card-emoji-fallback" style="display:none">${item.emoji}</span>` : `<span class="menu-card-emoji-fallback">${item.emoji}</span>`}
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <span class="menu-card-title">${item.name}</span>
+            <span class="menu-card-price">$${item.price.toFixed(2)}</span>
+          </div>
+          <p class="menu-card-desc">${item.desc}</p>
+          <div class="menu-card-meta">
+            <span class="menu-card-meta-item">🔥 ${item.cal} cal</span>
+            <span class="menu-card-meta-item">⏱ ${item.time}</span>
+          </div>
+          <div class="menu-card-footer">
+            <button class="btn-add" onclick="MexiEats.addToCart({id:'${item.id}',name:'${item.name.replace(/'/g, "\\'")}',price:${item.price},emoji:'${item.emoji}'})">+ Add to Order</button>
+            <div class="qty-control" style="display:none">
+              <button class="qty-btn qty-minus" onclick="MexiEats.updateQty('${item.id}', -1)">-</button>
+              <span class="qty-value">1</span>
+              <button class="qty-btn" onclick="MexiEats.updateQty('${item.id}', 1)">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  },
+
+  renderAllCards() {
+    const container = document.querySelector('#cat-all .menu-grid');
+    if (!container) return;
+    const allItems = Object.values(MENU_DATA).flat();
+    container.innerHTML = allItems.map(item => `
+      <div class="menu-card" data-id="${item.id}">
+        <div class="menu-card-image">
+          ${item.badge ? `<span class="menu-card-badge ${item.badge}">${item.badge === 'popular' ? '★ Popular' : 'New'}</span>` : ''}
+          ${item.img ? `<img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="menu-card-emoji-fallback" style="display:none">${item.emoji}</span>` : `<span class="menu-card-emoji-fallback">${item.emoji}</span>`}
         </div>
         <div class="menu-card-body">
           <div class="menu-card-header">

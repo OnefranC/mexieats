@@ -52,7 +52,8 @@
       <h1>Explore Our Menu</h1>
       <p class="section-desc">Fresh, authentic Mexican cuisine crafted with love. Every dish tells a story.</p>
       <div class="menu-tabs">
-        <button class="menu-tab active" data-category="meals">🌮 Meals</button>
+        <button class="menu-tab active" data-category="all">🍽️ All</button>
+        <button class="menu-tab" data-category="meals">🌮 Meals</button>
         <button class="menu-tab" data-category="drinks">🍹 Drinks</button>
         <button class="menu-tab" data-category="sides">🫓 Sides</button>
         <button class="menu-tab" data-category="burgers">🍔 Burgers</button>
@@ -65,7 +66,11 @@
   <!-- Menu Content -->
   <section class="menu-content">
     <div class="container">
-      <div id="cat-meals" class="menu-category active">
+      <div id="cat-all" class="menu-category active">
+        <h3 class="category-heading">🍽️ All Menu Items</h3>
+        <div class="menu-grid"></div>
+      </div>
+      <div id="cat-meals" class="menu-category">
         <h3 class="category-heading">🌮 Tacos & Meals</h3>
         <div class="menu-grid"></div>
       </div>
@@ -142,6 +147,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       MexiEats.initMenuTabs();
+      MexiEats.renderAllCards();
       ['meals','drinks','sides','burgers','cakes','fruits'].forEach(cat => MexiEats.renderMenuCards(cat));
       MexiEats.updateCartUI();
     });
