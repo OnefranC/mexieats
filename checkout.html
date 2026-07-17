@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Mexieats</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌮</text></svg>">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌮</div> Mexi<span>eats</span></a>
+      <div class="nav-links">
+        <a href="menu.html" class="nav-link">MENU</a>
+        <a href="index.html#how-it-works" class="nav-link">HOW IT WORKS</a>
+        <a href="index.html#why-mexieats" class="nav-link">WHY MEXIEATS</a>
+        <a href="index.html#testimonials" class="nav-link">TESTIMONIALS</a>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-cart" aria-label="Open cart">🛒 <span class="nav-cart-badge">0</span></button>
+        <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="menu.html" class="nav-link">MENU</a>
+    <a href="index.html#how-it-works" class="nav-link">HOW IT WORKS</a>
+    <a href="index.html#why-mexieats" class="nav-link">WHY MEXIEATS</a>
+    <a href="index.html#testimonials" class="nav-link">TESTIMONIALS</a>
+  </div>
+
+  <!-- Checkout -->
+  <section class="checkout-page">
+    <div class="container">
+      <h2 style="margin-bottom:8px">Checkout</h2>
+      <p style="color:var(--text-muted);margin-bottom:32px">Complete your order details below.</p>
+      <div class="checkout-grid">
+        <div class="checkout-form">
+
+          <!-- Delivery Info -->
+          <div class="checkout-section">
+            <h3><span class="step-num">1</span> Delivery Information</h3>
+            <div class="delivery-options">
+              <div class="delivery-option selected" data-type="delivery">
+                <div class="delivery-option-icon">🚗</div>
+                <h4>Delivery</h4>
+                <p>To your door</p>
+              </div>
+              <div class="delivery-option" data-type="pickup">
+                <div class="delivery-option-icon">🏪</div>
+                <h4>Pickup</h4>
+                <p>Ready in 15 min</p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" placeholder="Alex Johnson">
+                <span class="form-error">Please enter your full name</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="alex@example.com">
+                <span class="form-error">Please enter a valid email</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(555) 123-4567">
+              <span class="form-error">Please enter your phone number</span>
+            </div>
+            <div class="form-group">
+              <label for="address">Delivery Address</label>
+              <input type="text" id="address" placeholder="123 Main Street, Apt 4B">
+              <span class="form-error">Please enter your delivery address</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Los Angeles">
+                <span class="form-error">Please enter your city</span>
+              </div>
+              <div class="form-group">
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" placeholder="90001">
+                <span class="form-error">Please enter a valid ZIP code</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="instructions">Delivery Instructions (Optional)</label>
+              <input type="text" id="instructions" placeholder="Ring doorbell, leave at door...">
+            </div>
+          </div>
+
+          <!-- Delivery Time -->
+          <div class="checkout-section" id="delivery-time-section">
+            <h3><span class="step-num">2</span> Delivery Time</h3>
+            <div class="time-slots">
+              <div class="time-slot selected">ASAP (25-35 min)</div>
+              <div class="time-slot">12:00 PM</div>
+              <div class="time-slot">12:30 PM</div>
+              <div class="time-slot">1:00 PM</div>
+              <div class="time-slot">1:30 PM</div>
+              <div class="time-slot">2:00 PM</div>
+            </div>
+          </div>
+
+          <!-- Payment -->
+          <div class="checkout-section">
+            <h3><span class="step-num">3</span> Payment Method</h3>
+            <div class="payment-methods">
+              <div class="payment-method selected" data-method="card">
+                <div class="payment-method-icon">💳</div>
+                <h4>Card</h4>
+              </div>
+              <div class="payment-method" data-method="wallet">
+                <div class="payment-method-icon">📱</div>
+                <h4>Digital Wallet</h4>
+              </div>
+              <div class="payment-method" data-method="cash">
+                <div class="payment-method-icon">💵</div>
+                <h4>Cash</h4>
+              </div>
+            </div>
+
+            <!-- Card Panel -->
+            <div class="payment-panel active" id="panel-card">
+              <div class="card-form">
+                <div class="form-group">
+                  <label for="card-name">Cardholder Name</label>
+                  <input type="text" id="card-name" placeholder="Alex Johnson">
+                </div>
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" placeholder="4242 4242 4242 4242" maxlength="19">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-expiry">Expiry Date</label>
+                    <input type="text" id="card-expiry" placeholder="12/25" maxlength="5">
+                  </div>
+                  <div class="form-group">
+                    <label for="card-cvc">CVC</label>
+                    <input type="text" id="card-cvc" placeholder="123" maxlength="4">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wallet Panel -->
+            <div class="payment-panel" id="panel-wallet">
+              <div class="wallet-options">
+                <button class="wallet-btn wallet-apple"> Apple Pay</button>
+                <button class="wallet-btn wallet-google"> Google Pay</button>
+              </div>
+            </div>
+
+            <!-- Cash Panel -->
+            <div class="payment-panel" id="panel-cash">
+              <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:8px">Select amount to tender:</p>
+              <div class="cash-amounts">
+                <div class="cash-amount" data-amount="37.80">$37.80</div>
+                <div class="cash-amount" data-amount="40">$40.00</div>
+                <div class="cash-amount" data-amount="50">$50.00</div>
+                <div class="cash-amount" data-amount="100">$100.00</div>
+              </div>
+              <div class="change-display" style="display:none">
+                <div>
+                  <div class="label">Change Due</div>
+                  <div class="amount">$0.00</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="label">Paying with</div>
+                  <div class="paying-with" style="font-weight:600;color:var(--text-white)">$0.00 Cash</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-checkout" style="width:100%">Place Order</button>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="checkout-summary">
+          <h3>Order Summary</h3>
+          <div class="checkout-items-list"></div>
+          <div class="promo-input">
+            <input type="text" placeholder="Promo code" id="promo-code">
+            <button onclick="applyPromoCode()">Apply</button>
+          </div>
+          <div class="promo-success" id="promo-success">Promo applied!</div>
+          <div class="promo-error" id="promo-error">Invalid promo code</div>
+          <div class="checkout-totals"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mexieats. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Overlay & Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer" style="display:none">
+      <div class="cart-summary-row"><span>Subtotal</span><span class="cart-subtotal">$0.00</span></div>
+      <div class="cart-summary-row"><span>Tax (8%)</span><span class="cart-tax">$0.00</span></div>
+      <div class="cart-summary-row"><span>Delivery</span><span class="cart-delivery">FREE</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span class="cart-grand-total">$0.00</span></div>
+    </div>
+  </div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function applyPromoCode() {
+      const code = document.getElementById('promo-code').value;
+      const success = document.getElementById('promo-success');
+      const error = document.getElementById('promo-error');
+      success.style.display = 'none';
+      error.style.display = 'none';
+      if (MexiEats.applyPromo(code)) {
+        success.style.display = 'block';
+        MexiEats.updateCartUI();
+        MexiEats.renderCheckoutSummary();
+      } else {
+        error.style.display = 'block';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => MexiEats.initCheckout());
+  </script>
+</body>
+</html>

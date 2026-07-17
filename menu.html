@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Mexieats</title>
+  <meta name="description" content="Browse our full menu of tacos, burritos, sides, drinks, burgers, cakes, and fresh fruits.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌮</text></svg>">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🌮</div>
+        Mexi<span>eats</span>
+      </a>
+      <div class="nav-links">
+        <a href="menu.html" class="nav-link active">MENU</a>
+        <a href="index.html#how-it-works" class="nav-link">HOW IT WORKS</a>
+        <a href="index.html#why-mexieats" class="nav-link">WHY MEXIEATS</a>
+        <a href="index.html#testimonials" class="nav-link">TESTIMONIALS</a>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-cart" aria-label="Open cart">
+          🛒
+          <span class="nav-cart-badge">0</span>
+        </button>
+        <a href="checkout.html" class="btn btn-primary btn-sm">Checkout</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="menu.html" class="nav-link active">MENU</a>
+    <a href="index.html#how-it-works" class="nav-link">HOW IT WORKS</a>
+    <a href="index.html#why-mexieats" class="nav-link">WHY MEXIEATS</a>
+    <a href="index.html#testimonials" class="nav-link">TESTIMONIALS</a>
+    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+  </div>
+
+  <!-- Menu Hero -->
+  <section class="menu-hero">
+    <div class="container" style="position:relative;">
+      <span class="section-label">Our Menu</span>
+      <h1>Explore Our Menu</h1>
+      <p class="section-desc">Fresh, authentic Mexican cuisine crafted with love. Every dish tells a story.</p>
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-category="meals">🌮 Meals</button>
+        <button class="menu-tab" data-category="drinks">🍹 Drinks</button>
+        <button class="menu-tab" data-category="sides">🫓 Sides</button>
+        <button class="menu-tab" data-category="burgers">🍔 Burgers</button>
+        <button class="menu-tab" data-category="cakes">🍰 Cakes</button>
+        <button class="menu-tab" data-category="fruits">🥭 Fruits</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Content -->
+  <section class="menu-content">
+    <div class="container">
+      <div id="cat-meals" class="menu-category active">
+        <h3 class="category-heading">🌮 Tacos & Meals</h3>
+        <div class="menu-grid"></div>
+      </div>
+      <div id="cat-drinks" class="menu-category">
+        <h3 class="category-heading">🍹 Cocktails & Drinks</h3>
+        <div class="menu-grid"></div>
+      </div>
+      <div id="cat-sides" class="menu-category">
+        <h3 class="category-heading">🫓 Chips, Dips & Sides</h3>
+        <div class="menu-grid"></div>
+      </div>
+      <div id="cat-burgers" class="menu-category">
+        <h3 class="category-heading">🍔 Signature Burgers</h3>
+        <div class="menu-grid"></div>
+      </div>
+      <div id="cat-cakes" class="menu-category">
+        <h3 class="category-heading">🍰 Desserts & Cakes</h3>
+        <div class="menu-grid"></div>
+      </div>
+      <div id="cat-fruits" class="menu-category">
+        <h3 class="category-heading">🥭 Fresh Fruits</h3>
+        <div class="menu-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><div class="nav-logo-icon">🌮</div> Mexi<span>eats</span></a>
+          <p>Premium Mexican food delivery for busy professionals.</p>
+        </div>
+        <div><h4>Menu</h4><ul class="footer-links"><li><a href="#">Meals</a></li><li><a href="#">Drinks</a></li><li><a href="#">Sides</a></li></ul></div>
+        <div><h4>Company</h4><ul class="footer-links"><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li></ul></div>
+        <div><h4>Support</h4><ul class="footer-links"><li><a href="#">Help</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mexieats. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">📷</a>
+          <a href="#" class="footer-social">🐦</a>
+          <a href="#" class="footer-social">📘</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Overlay & Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button class="cart-close" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer" style="display:none">
+      <div class="cart-summary-row"><span>Subtotal</span><span class="cart-subtotal">$0.00</span></div>
+      <div class="cart-summary-row"><span>Tax (8%)</span><span class="cart-tax">$0.00</span></div>
+      <div class="cart-summary-row"><span>Delivery</span><span class="cart-delivery">FREE</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span class="cart-grand-total">$0.00</span></div>
+      <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <!-- Floating Cart -->
+  <div class="cart-float">
+    <button class="cart-float-btn">🛒 View Order <span class="cart-float-count">0</span></button>
+  </div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      MexiEats.initMenuTabs();
+      ['meals','drinks','sides','burgers','cakes','fruits'].forEach(cat => MexiEats.renderMenuCards(cat));
+      MexiEats.updateCartUI();
+    });
+  </script>
+</body>
+</html>
