@@ -98,6 +98,8 @@ p { font-size: clamp(0.95rem, 1.5vw, 1.125rem); color: var(--text-light); line-h
 .nav-cart:hover { background: rgba(0, 0, 0, 0.1); border-color: var(--secondary); color: var(--secondary); }
 .nav-cart-badge { position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; background: var(--secondary); color: white; border-radius: 50%; font-size: 0.65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 2px solid var(--bg-dark); opacity: 0; transform: scale(0); transition: all var(--transition-fast); }
 .nav-cart-badge.visible { opacity: 1; transform: scale(1); }
+.nav-actions > .nav-cart { display: none; }
+.nav-actions > .btn { display: none; }
 .mobile-menu-btn { display: flex; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer; }
 .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: var(--text-white); transition: all var(--transition-normal); border-radius: 2px; }
 .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -116,6 +118,8 @@ p { font-size: clamp(0.95rem, 1.5vw, 1.125rem); color: var(--text-light); line-h
   .nav-links { display: flex; align-items: center; gap: 28px; }
   .mobile-menu-btn { display: none; }
   .mobile-menu { display: none !important; }
+  .nav-actions > .nav-cart { display: flex; }
+  .nav-actions > .btn { display: inline-flex; }
   .nav-cart { width: 44px; height: 44px; font-size: 1.2rem; }
   .nav-actions { gap: 16px; }
 }
@@ -294,7 +298,8 @@ p { font-size: clamp(0.95rem, 1.5vw, 1.125rem); color: var(--text-light); line-h
 .menu-hero h1 { color: #fff; }
 .menu-hero .section-desc { color: rgba(255, 255, 255, 0.8); }
 .menu-hero .section-label { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.25); color: #fff; }
-.menu-tabs { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-top: 24px; position: relative; }
+.menu-tabs-section { padding: 8px 0; position: relative; z-index: 2; }
+.menu-tabs { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; position: relative; }
 .menu-tab { padding: 8px 16px; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 500; color: rgba(255, 255, 255, 0.7); background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); transition: all var(--transition-fast); cursor: pointer; }
 .menu-tab:hover { color: #fff; border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.15); }
 .menu-tab.active { background: #fff; color: #660066; border-color: #fff; }
